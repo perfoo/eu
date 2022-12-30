@@ -34,8 +34,13 @@ p {
   margin-top: 30%;
 }
 
+h3 {
+  margin-top: 15px;
+
+}
+
 input {
-  font-size: 1.5em;
+  font-size: 1.4em;
   border-radius: 10px;
   background-color: #007FFF;
   border-color: #007FFF;
