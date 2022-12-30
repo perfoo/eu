@@ -1,23 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { useState } from "react";
+import "./App.css";
 
 function App() {
+  const [iznos, setIznos] = useState(0);
+
+  const clickHandler1 = () => {
+    const x = document.getElementById("x").value;
+    setIznos(
+      (x / 7.5345).toLocaleString("hr-HR", {
+        maximumFractionDigits: 2,
+        style: "currency",
+        currency: "EUR",
+        currencyDisplay: "symbol",
+      })
+    );
+  };
+
+  const clickHandler2 = () => {
+    const x = document.getElementById("x").value;
+    setIznos(
+      (x * 7.5345).toLocaleString("hr-HR", {
+        maximumFractionDigits: 2,
+        style: "currency",
+        currency: "HRK",
+        currencyDisplay: "symbol",
+      })
+    );
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h3>EURO konverter 7.53450</h3>
+      <input type="text" name="x" id="x"></input>
+      <div>
+        <button onClick={clickHandler1}>KN =&gt; €</button>
+        <button onClick={clickHandler2}>€ =&gt; KN</button>
+      </div>
+      <h2>{iznos}</h2>
+      <p>&#169;VIDEONADZOR - Casino Cezar</p>
     </div>
   );
 }
