@@ -37,7 +37,7 @@ function App() {
         <button onClick={clickHandler1}>KN =&gt; €</button>
         <button onClick={clickHandler2}>€ =&gt; KN</button>
       </div>
-      <h2>{iznos}</h2>
+      <h1>{iznos}</h1>
       <p>&#169;VIDEONADZOR - Casino Cezar</p>
     </div>
   );
