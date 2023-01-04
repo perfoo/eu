@@ -29,10 +29,16 @@ function App() {
     );
   };
 
+  const handleKeyDown = (event) => {
+    if (event.key === "Enter") {
+      clickHandler1();
+    }
+  };
+
   return (
     <div className="App">
       <h3>EURO konverter 7.53450</h3>
-      <input type="text" name="x" id="x"></input>
+      <input type="text" name="x" id="x" onKeyDown={handleKeyDown}></input>
       <div>
         <button onClick={clickHandler1}>KN =&gt; €</button>
         <button onClick={clickHandler2}>€ =&gt; KN</button>
